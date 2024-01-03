@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  background: #F9F4EA;
+  padding: 0px 0px 8px 0px;
+  gap: 8px;
+  align-self: stretch;
+  height: 100%;
+}
+
+.card-image {
+  margin-bottom: 8px;
+  background: lightgray 50% / cover no-repeat;
+  width: 100%;
+}
+
+.card-title {
+  color: #000;
+  font-family: Helvetica Neue;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 47px;
+  /* 117.5% */
+  letter-spacing: 2.67px;
+  margin-bottom: 8px;
+  text-align: center;
+  max-width: 380px;
+  max-height: 654px;
+}

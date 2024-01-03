@@ -1,0 +1,97 @@
+.chef-of-the-week-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .chef-of-the-week-image {
+    position: relative;
+    max-width: 478px;
+    max-height: 372px;
+    flex-shrink: 0;
+    margin-right: 63.5px;
+    background: #000;
+  
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .chef-name-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      display: flex;
+      max-width: 478px;
+      max-height: 78px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #000;
+      text-align: center;
+      font-family: Helvetica Neue;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 47px; /* 117.5% */
+      letter-spacing: 2.67px;
+    }
+  }
+
+  .chef-of-the-week-title {
+    color: #000;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 35px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+
+  .chef-of-the-week-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .chef-of-the-week-description {
+      color: #000;
+      text-align: justify;
+      font-family: Helvetica Neue;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: 35px;
+      letter-spacing: 1.25px;
+    }
+  }
+
+  .card-section {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}

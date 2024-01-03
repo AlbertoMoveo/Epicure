@@ -1,0 +1,37 @@
+.dish-description {
+    color: #000;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 30px;
+    /* 125% */
+    letter-spacing: 1.97px;
+    letter-spacing: 1.97px;
+    margin-bottom: 8px;
+    flex-grow: 1;
+}
+
+.dish-icon {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    max-width: 40px;
+    max-height: 31px;
+}
+
+.dish-price {
+    color: #000;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 30px;
+    /* 125% */
+    letter-spacing: 1.97px;
+
+    width: 112px;
+    height: 0.5px;
+    background: #979797;
+}
