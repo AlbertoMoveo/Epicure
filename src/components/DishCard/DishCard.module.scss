@@ -1,13 +1,17 @@
+.dish-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .dish-description {
     color: #000;
     text-align: center;
-    font-family: Helvetica Neue;
+    font-family: 'Helvetica Neue';
     font-size: 24px;
     font-style: normal;
     font-weight: 200;
     line-height: 30px;
-    /* 125% */
-    letter-spacing: 1.97px;
     letter-spacing: 1.97px;
     margin-bottom: 8px;
     flex-grow: 1;
@@ -20,18 +24,26 @@
     max-height: 31px;
 }
 
+.dish-price-container {
+    display: flex;
+    align-items: center;
+}
+
 .dish-price {
     color: #000;
-    text-align: center;
-    font-family: Helvetica Neue;
+    font-family: 'Helvetica Neue';
     font-size: 24px;
     font-style: normal;
     font-weight: 200;
     line-height: 30px;
-    /* 125% */
     letter-spacing: 1.97px;
+    margin: 0 8px;
+}
 
+.dish-divider {
     width: 112px;
+    height: 0.5px;
+    flex-grow: 1;
     height: 0.5px;
     background: #979797;
 }

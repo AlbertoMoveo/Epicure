@@ -1,19 +1,18 @@
 import React from 'react';
 import GenericSection from '../GenericSection/GenericSection';
 import CardSection from '../../CardSection/CardSection';
-import LayoutContainer from '../../LayoutContainer/LayoutContainer';
 
 interface PopularSectionProps {
   title: string;
   cards: React.ReactNode[];
+  showMoreButton?: boolean;
+  moreButtonTitle?: string;
 }
 
-const PopularSection: React.FC<PopularSectionProps> = ({ title, cards }) => {
+const PopularSection: React.FC<PopularSectionProps> = ({ title, cards, showMoreButton, moreButtonTitle }) => {
   return (
-    <GenericSection title={`Popular ${title}`}>
-      <LayoutContainer>
-        <CardSection title={title} cards={cards} />
-      </LayoutContainer>
+    <GenericSection title={`${title}`}>
+        <CardSection cards={cards} showMoreButton={showMoreButton} moreButtonTitle={moreButtonTitle}/>
     </GenericSection>
   );
 };

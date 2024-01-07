@@ -1,5 +1,3 @@
-// ChefOfTheWeek.jsx
-
 import React from 'react';
 import styles from './ChefOfTheWeek.module.scss';
 import GenericSection from '../GenericSection/GenericSection';
@@ -15,7 +13,6 @@ function ChefOfTheWeek() {
   return (
     <GenericSection title="Chef of the Week">
       <div className={styles['chef-of-the-week-container']}>
-        <h2 className={styles['chef-of-the-week-title']}>Chef of the week:</h2>
         <div className={styles['chef-of-the-week-content']}>
           <div className={styles['chef-of-the-week-image']}>
             <img src={chefOfTheWeekImage} alt="Chef of the Week" />
@@ -29,23 +26,23 @@ function ChefOfTheWeek() {
             Shitrit's creativity and culinary acumen born of long experience are expressed in every detail of each and every dish.
           </p>
         </div>
-        <div className={styles['card-section']}>
-          <CardSection
-            title="Yossi’s Restaurants"
+      </div>
+      <h3 className={styles['card-section-title']}>Yossi’s Restaurants</h3>
+      <div className={styles['card-section']}>
+          <CardSection 
             cards={[
-              <Card key="1" title="Onza" imageUrl={onzaImg}>
-                <p>Description for Onza</p>
+              <Card key="0" title="Onza" imageUrl={onzaImg}>
+                <p></p>
               </Card>,
-              <Card key="2" title="Kitchen Market" imageUrl={kitchenImg}>
-                <p>Description for Kitchen Market</p>
+              <Card key="1" title="Kitchen Market" imageUrl={kitchenImg}>
+                <p></p>
               </Card>,
-              <Card key="3" title="Mashya" imageUrl={mashyaImg}>
-                <p>Description for Mashya</p>
-              </Card>,
+              <Card key="2" title="Mashya" imageUrl={mashyaImg}>
+                <p></p>
+              </Card>
             ]}
           />
         </div>
-      </div>
     </GenericSection>
   );
 }

@@ -13,10 +13,15 @@ interface DishCardProps {
 const DishCard: React.FC<DishCardProps> = ({ title, description, imageUrl, icon, price }) => {
   return (
     <Card title={title} imageUrl={imageUrl}>
-      {/* <div className={styles['dish-icon']}>{icon}</div> */}
       {icon}
-      <p className={styles['dish-description']}>{description}</p>
-      <p className={styles['dish-price']}>{price}</p>
+      <div className={styles['dish-container']}>
+        <p className={styles['dish-description']}>{description}</p>
+        <div className={styles['dish-price-container']}>
+          <div className={styles['dish-divider']}></div>
+          <p className={styles['dish-price']}>{price}</p>
+          <div className={styles['dish-divider']}></div>
+        </div>
+      </div>
     </Card>
   );
 };

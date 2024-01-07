@@ -1,14 +1,80 @@
 @import '../../assets/styling/mixins.scss';
 
 .header {
-  background-color: #cbc2c8;
   display: flex;
   max-width: 1440px;
   height: 64px;
-  padding-top: 14px;
-  flex-direction: column;
-  justify-content: flex-end;
+  padding: 14px 20px;
+  justify-content: space-between;
   align-items: center;
-  gap: 14px;
   flex-shrink: 0;
+}
+
+.hamburger-logo-container {
+  display: block;
+
+  @include desktop{
+    display: none;
+  }
+}
+
+.home-logo-container {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: Helvetica Neue;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  letter-spacing: 1.35px;
+  margin-left: 45px;
+
+
+  .home-title {
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 1.35px;
+    margin-left: 15px;
+    margin-right: 32px;
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .subtitle {
+    display: none;
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 1.92px;
+    margin-right: 32px;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.logo-container {
+  display: flex;
+  gap: 13px;
+
+  @include desktop {
+    gap: 24px;
+  }
+
+  .img-logo {
+    height: 40px;
+    width: auto;
+  }
 }

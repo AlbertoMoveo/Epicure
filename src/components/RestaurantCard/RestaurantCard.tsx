@@ -12,8 +12,12 @@ interface RestaurantCardProps {
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ title, chef, ratingUrl, imageUrl }) => {
   return (
     <Card title={title} imageUrl={imageUrl}>
-      <p className={styles['restaurant-chef']}>{chef}</p>
-      <img src={ratingUrl} alt={`Rating for ${title}`} />
+      <div className={styles['restaurant-chef']}>
+        <p>{chef}</p>
+      </div>
+      <div className={styles['rating-img']}>
+        <img src={ratingUrl} alt={`Rating for ${title}`} />
+      </div>
     </Card>
   );
 };

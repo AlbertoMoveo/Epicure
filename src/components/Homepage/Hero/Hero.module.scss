@@ -1,47 +1,79 @@
 @import '../../../assets/styling/mixins.scss';
 
 .hero-section {
-    // flex-shrink: 0;
-    background: url('../../../assets/png/hero-picture 1.png') lightgray 50% / cover no-repeat;
+  background: url('../../../assets/png/hero-picture 1.png') lightgray 50% / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 273px;
+  flex-shrink: 0;
+
+  @include desktop {
+    height: 696px;
+  }
+
+  .small-hero {
+    position: relative;
     display: flex;
+    padding: 36px 126px;
+    margin: 160px 65px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-  
+    gap: 18px;
+    flex-shrink: 1;
+    background: rgba(255, 255, 255, 0.88);
+
+    color: #000;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 200;
+
     @include desktop {
-      height: 696px;
+      max-width: 776px;
+      padding: 36px 126px;
     }
-  
-    height: 273px;
-  
-    .small-hero {
-      display: flex;
-      max-width: 335px;
-      height: fit-content;
-      padding: 36px 16px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      flex-shrink: 0;
-      background: rgba(255, 255, 255, 0.88);
-  
+
+    .title {
       color: #000;
       font-family: Helvetica Neue;
+      font-size: 24px;
       font-style: normal;
       font-weight: 200;
-  
-      .title {
+      line-height: 32px;
+      /* 133.333% */
+      letter-spacing: 1.97px;
+
+      @include desktop {
         font-size: 32px;
         line-height: 40px;
         /* 125% */
         letter-spacing: 1.97px;
       }
-  
-      .search-bar {
-  
+    }
+
+    .search-bar {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      min-width: 351px;
+      min-height: 30px;
+      color: #000;
+      font-family: Helvetica Neue;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 200;
+      line-height: normal;
+      flex-shrink: 1;
+      letter-spacing: 1.29px;
+      border-radius: 4px;
+      border: 0.5px solid #000;
+      padding: 6px 12px;
+      margin: 10px 16px;
+      gap: 8px;
+
+      @include desktop {
         display: flex;
-        width: 505px;
         height: 48px;
         padding: 6px 12px;
         align-items: center;
@@ -52,12 +84,8 @@
         font-size: 24px;
         line-height: normal;
         letter-spacing: 1.29px;
-      }
-  
-      @include desktop {
-        max-width: 776px;
-        padding: 36px 126px;
-  
+        min-width: 415px;
       }
     }
   }
+}

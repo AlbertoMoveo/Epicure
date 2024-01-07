@@ -1,0 +1,37 @@
+@import '../../LayoutContainer/LayoutContainer.module.scss';
+
+$backgroundColor: inherit;
+$yPadding: inherit;
+
+.generic-section-wrapper {
+  background-color: $backgroundColor;
+  padding: $yPadding;
+
+  @include desktop {
+    align-items: center;
+  }
+
+  .title {
+    margin-top: 48px;
+    margin-bottom: 16px;
+
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 35px;
+    /* 194.444% */
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    text-align: left;
+
+    @include desktop {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+}

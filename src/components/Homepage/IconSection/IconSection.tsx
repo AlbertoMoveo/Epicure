@@ -6,23 +6,22 @@ interface IconSectionProps {
   title: string;
   icons: React.ReactNode[];
   iconTitles: string[];
+  backgroundColor?: string;
+  yPadding?: number;
 }
 
-const IconSection: React.FC<IconSectionProps> = ({ title, icons, iconTitles }) => {
+const IconSection: React.FC<IconSectionProps> = ({ title, icons, iconTitles, backgroundColor, yPadding }) => {
   return (
-    <div className={styles['icon-section']}>
-      <GenericSection title={title}>
-      <div className={styles['title']}>{title}</div>
-        <div className={styles['icon-container']}>
-          {icons.map((icon, index) => (
-            <div key={index} className={styles['icon-wrapper']}>
-              {icon}
-              <div className={styles['icon-title']}>{iconTitles[index]}</div>
-            </div>
-          ))}
-        </div>
-      </GenericSection>
-    </div>
+    <GenericSection title={title} backgroundColor={'#fafafa'} yPadding={yPadding}>
+      <div className={styles['icon-section']}>
+        {icons.map((icon, index) => (
+          <div key={index} className={styles['icon']}>
+            <div className={styles['icon-img']}>{icon}</div>
+            <div className={styles['icon-title']}>{iconTitles[index]}</div>
+          </div>
+        ))}
+      </div>
+    </GenericSection>
   );
 };
 
