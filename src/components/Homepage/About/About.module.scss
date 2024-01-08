@@ -1,16 +1,15 @@
 @import '../../LayoutContainer/LayoutContainer.module.scss';
 
 .about-container {
-  display: grid;
-  flex-direction: column;
+  display: flex;
+  flex-direction: column-reverse;
   align-items: center;
-  padding: 0px 0px 8px 0px;
+  justify-content: space-evenly;
   gap: 8px;
-  align-self: stretch;
-  height: 100%;
 
   @include desktop{
-    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .title {
@@ -45,14 +44,18 @@
       line-height: 30px;
       /* 150% */
       letter-spacing: 2.14px;
-      margin-bottom: 23;
+      // margin-bottom: 23;
+      align-self: flex-start;
     }
   }
 
   .image {
-    position: relative;
     width: 30%;
     margin-bottom: 32px;
+
+    @include desktop {
+      width: 10vw;
+    }
   }
 
   .icons {
@@ -62,14 +65,14 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 7px 12px;
-    gap: 7px;
+    gap: 10px;
     border-radius: 10px;
     border: 0.5px solid #000;
     width: 38vw;
-    margin-bottom: 16px;
+    margin-bottom: 26px;
 
     @include desktop {
-      width: 20vw;
+      width: 13vw;
     }
 
 

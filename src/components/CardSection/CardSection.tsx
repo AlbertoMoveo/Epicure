@@ -10,16 +10,14 @@ interface CardSectionProps {
   cards: ReactNode[];
   backgroundColor?: string;
   yPadding?: number;
-  showMoreButton?: boolean;
   moreButtonTitle?: string;
 }
 
-const CardSection: React.FC<CardSectionProps> = ({ cards, backgroundColor, yPadding, showMoreButton, moreButtonTitle }) => {
+const CardSection: React.FC<CardSectionProps> = ({ cards, backgroundColor, yPadding, moreButtonTitle }) => {
   return (
     <div className={styles['card-section']}>
       <Swiper
         effect="coverflow"
-        centeredSlides={true}
         slidesPerView={3}
         initialSlide={1}
         spaceBetween={24}
@@ -36,28 +34,28 @@ const CardSection: React.FC<CardSectionProps> = ({ cards, backgroundColor, yPadd
           // Desktop
           768: {
             slidesPerView: 3,
-            autoHeight: false,
+            initialSlide: 0,
+            autoHeight: true,
             allowSlidePrev: false,
             allowSlideNext: false,
           },
           // Mobile
           0: {
-            width: 870,
-            height: 900,
-            initialSlide: 1,
-            slidesPerView: 2,
+            autoHeight: true,
+            initialSlide: 0,
+            slidesPerView: 4/3,
             allowSlidePrev: true,
             allowSlideNext: true,
           },
         }}
       >
         {cards.map((card, index) => (
-          <SwiperSlide key={index} className={styles['swiper-slide']}>
-            <div className="card h-100">{card}</div>
+          <SwiperSlide key={index} className={styles['swiper-slide']} >
+            {card}
           </SwiperSlide>
         ))}
       </Swiper>
-      {showMoreButton && (
+      {moreButtonTitle && (
         <div className={styles['more-button']}>
           {moreButtonTitle}
           <img src={moreButton} alt="More Restaurants" />

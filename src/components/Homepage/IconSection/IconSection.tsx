@@ -16,7 +16,9 @@ const IconSection: React.FC<IconSectionProps> = ({ title, icons, iconTitles, bac
       <div className={styles['icon-section']}>
         {icons.map((icon, index) => (
           <div key={index} className={styles['icon']}>
-            <div className={styles['icon-img']}>{icon}</div>
+            
+            {icon}
+            
             <div className={styles['icon-title']}>{iconTitles[index]}</div>
           </div>
         ))}

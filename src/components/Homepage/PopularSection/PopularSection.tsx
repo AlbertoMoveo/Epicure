@@ -11,8 +11,8 @@ interface PopularSectionProps {
 
 const PopularSection: React.FC<PopularSectionProps> = ({ title, cards, showMoreButton, moreButtonTitle }) => {
   return (
-    <GenericSection title={`${title}`}>
-        <CardSection cards={cards} showMoreButton={showMoreButton} moreButtonTitle={moreButtonTitle}/>
+    <GenericSection title={`${title}`} yPadding={25}>
+        <CardSection cards={cards}  moreButtonTitle={moreButtonTitle}/>
     </GenericSection>
   );
 };

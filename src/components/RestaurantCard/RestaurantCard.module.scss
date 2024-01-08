@@ -4,14 +4,15 @@
 .restaurant-chef {
   color: #000;
   font-family: Helvetica Neue;
-  font-size: 24px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 200;
-  line-height: 30px;
-  /* 125% */
   letter-spacing: 1.97px;
-  margin-bottom: 8px;
-  margin-top: 8px;
+  line-height: 30px;
+
+  @include desktop {
+    font-size: 24px;
+  }
   }
   .rating-img {
     display: none;

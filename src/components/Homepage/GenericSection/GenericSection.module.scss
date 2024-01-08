@@ -1,11 +1,6 @@
 @import '../../LayoutContainer/LayoutContainer.module.scss';
 
-$backgroundColor: inherit;
-$yPadding: inherit;
-
 .generic-section-wrapper {
-  background-color: $backgroundColor;
-  padding: $yPadding;
 
   @include desktop {
     align-items: center;
@@ -24,7 +19,7 @@ $yPadding: inherit;
     /* 194.444% */
     letter-spacing: 1.25px;
     text-transform: uppercase;
-    text-align: left;
+    // text-align: left;
 
     @include desktop {
       margin-top: 20px;
@@ -33,5 +28,7 @@ $yPadding: inherit;
       font-size: 30px;
       text-align: center;
     }
+
   }
+
 }

@@ -3,71 +3,29 @@
 .card-section {
   height: auto;
   position: relative;
-  margin-bottom: 100px;
-
-  @include desktop {
-    margin-bottom: 155px;
-  }
-
-  .swiper-slide {
-    display: flex;
-    align-items: stretch;
-    height: auto;
-  }
 
   .card {
     height: 100%;
   }
 
   .more-button {
-    justify-content: center;
-    align-items: center;
     position: absolute;
+    width: 100%;
     color: #000;
     font-family: Helvetica Neue;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 35px;
-    /* 218.75% */
     letter-spacing: 2px;
     text-transform: capitalize;
-    display: flex;
-    width: 24px;
-    height: 24px;
-    padding: 3px 0px;
-    left: 0;
-    margin-top: 41px;
-    margin-left: 70px;
-    padding: 24px 18px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    padding: 10px 10px;
 
     @include desktop {
-      display: flex;
-      width: 24px;
-      height: 24px;
-      justify-content: center;
-      align-items: center;
-      color: #000;
-      font-family: Helvetica Neue;
+      width: 100%;
       font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 35px;
-      /* 145.833% */
-      letter-spacing: 2px;
-      text-transform: capitalize;
       position: absolute;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-
-      right: 0;
-      left: auto;
-      margin-left: 0;
-      margin-top: 41px;
-      margin-right: 10px;
-      padding: 24px 18px;
+      padding-top: 25px;
     }
 
     img {

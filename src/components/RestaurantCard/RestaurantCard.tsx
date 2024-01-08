@@ -7,11 +7,12 @@ interface RestaurantCardProps {
   chef: string;
   ratingUrl: string;
   imageUrl: string;
+  minHeight?: number;
 }
 
-const RestaurantCard: React.FC<RestaurantCardProps> = ({ title, chef, ratingUrl, imageUrl }) => {
+const RestaurantCard: React.FC<RestaurantCardProps> = ({ title, chef, ratingUrl, imageUrl, minHeight }) => {
   return (
-    <Card title={title} imageUrl={imageUrl}>
+    <Card title={title} imageUrl={imageUrl} minHeight={minHeight}>
       <div className={styles['restaurant-chef']}>
         <p>{chef}</p>
       </div>

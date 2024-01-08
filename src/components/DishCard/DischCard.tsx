@@ -8,20 +8,19 @@ interface DishCardProps {
   imageUrl: string;
   icon: React.ReactNode;
   price: string;
+  minHeight?: number;
 }
 
-const DishCard: React.FC<DishCardProps> = ({ title, description, imageUrl, icon, price }) => {
+const DishCard: React.FC<DishCardProps> = ({ title, description, imageUrl, icon, price, minHeight }) => {
   return (
-    <Card title={title} imageUrl={imageUrl}>
+    <Card title={title} imageUrl={imageUrl} minHeight={minHeight}>
       {icon}
-      <div className={styles['dish-container']}>
         <p className={styles['dish-description']}>{description}</p>
         <div className={styles['dish-price-container']}>
           <div className={styles['dish-divider']}></div>
           <p className={styles['dish-price']}>{price}</p>
           <div className={styles['dish-divider']}></div>
         </div>
-      </div>
     </Card>
   );
 };

@@ -1,8 +1,9 @@
+@import '../LayoutContainer/LayoutContainer.module.scss';
+
 .footer {
-    max-width: 1440px;
-    max-height: 85px;
-    padding-top: 20px;
-    padding-bottom: 31px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 20px;
 
     color: #000;
     font-family: Helvetica Neue;
@@ -12,7 +13,17 @@
     line-height: normal;
     letter-spacing: 1.92px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        max-width: 1440px;
+        max-height: 85px;
+        padding-top: 20px;
+        padding-bottom: 31px;
+    }
 }
 
 .footer-subtitle {

@@ -8,15 +8,14 @@ import appleIcon from '../../../assets/svg/Apple-icon.svg';
 
 const About = () => {
   return (
-    <GenericSection title="About Us" backgroundColor={'#fafafa'}>
+    <GenericSection title="About Us" backgroundColor={'#fafafa'} yPadding={20}>
       <div className={styles['about-container']}>
-        <p className={styles['description']}>
+      <p className={styles['description']}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non eu ipsum. Cras porta malesuada eros, eget blandit turpis suscipit at. Vestibulum sed massa in magna sodales porta. Vivamus elit urna, dignissim a vestibulum.
         </p>
-        <p className={styles['description']}>
+      <p className={styles['description']}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non eu ipsum. Cras porta malesuada eros.
         </p>
-        <img src={aboutImg} alt="About Us" className={styles['image']} />
         <div className={styles['icons']}>
           <div className={styles['icon']}>
             <img src={googleIcon} alt="Google Icon" />
@@ -29,6 +28,7 @@ const About = () => {
             <p>Download on the App Store</p>
           </div>
         </div>
+        <img src={aboutImg} alt="About Us" className={styles['image']} />
       </div>
     </GenericSection>
   );

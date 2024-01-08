@@ -11,7 +11,7 @@ interface GenericSectionProps {
 
 const GenericSection: React.FC<GenericSectionProps> = ({ title, backgroundColor, yPadding, children }) => {
   return (
-    <div className={styles['generic-section-wrapper']} style={{ backgroundColor, padding: `${yPadding}px` }}>
+    <div className={styles['generic-section-wrapper']} style={{ backgroundColor, padding: `${yPadding}px 0` }}>
       <LayoutContainer>
         <div className={styles['title']}>{title}</div>
         <div className={styles['generic-section']}>

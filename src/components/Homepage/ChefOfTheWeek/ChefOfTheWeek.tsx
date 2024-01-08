@@ -9,9 +9,15 @@ import onzaImg from '../../../assets/png/Onza.png';
 import kitchenImg from '../../../assets/png/Kitchen-Market.png';
 import mashyaImg from '../../../assets/png/Mashya.png';
 
+const chefOfTheWeekRestaurants = [
+  { id: "0", title: "Onza", imageUrl: onzaImg, description: "" },
+  { id: "1", title: "Kitchen Market", imageUrl: kitchenImg, description: "" },
+  { id: "2", title: "Mashya", imageUrl: mashyaImg, description: "" },
+];
+
 function ChefOfTheWeek() {
   return (
-    <GenericSection title="Chef of the Week">
+    <GenericSection title="Chef of the Week:">
       <div className={styles['chef-of-the-week-container']}>
         <div className={styles['chef-of-the-week-content']}>
           <div className={styles['chef-of-the-week-image']}>
@@ -29,20 +35,14 @@ function ChefOfTheWeek() {
       </div>
       <h3 className={styles['card-section-title']}>Yossi’s Restaurants</h3>
       <div className={styles['card-section']}>
-          <CardSection 
-            cards={[
-              <Card key="0" title="Onza" imageUrl={onzaImg}>
-                <p></p>
-              </Card>,
-              <Card key="1" title="Kitchen Market" imageUrl={kitchenImg}>
-                <p></p>
-              </Card>,
-              <Card key="2" title="Mashya" imageUrl={mashyaImg}>
-                <p></p>
-              </Card>
-            ]}
-          />
-        </div>
+        <CardSection
+          cards={chefOfTheWeekRestaurants.map((restaurant) => (
+            <Card key={restaurant.id} title={restaurant.title} imageUrl={restaurant.imageUrl} minHeight={150}>
+              <p>{restaurant.description}</p>
+            </Card>
+          ))}
+        />
+      </div>
     </GenericSection>
   );
 }
