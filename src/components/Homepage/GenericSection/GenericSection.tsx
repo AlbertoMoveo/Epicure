@@ -3,17 +3,18 @@ import styles from './GenericSection.module.scss';
 import LayoutContainer from '../../LayoutContainer/LayoutContainer';
 
 interface GenericSectionProps {
-  title: string;
+  title?: string;
   backgroundColor?: string;
-  yPadding?: number;
+  marginBottom?: number;
+  marginTop?: number;
   children: ReactNode;
 }
 
-const GenericSection: React.FC<GenericSectionProps> = ({ title, backgroundColor, yPadding, children }) => {
+const GenericSection: React.FC<GenericSectionProps> = ({ title, backgroundColor, marginBottom, marginTop, children }) => {
   return (
-    <div className={styles['generic-section-wrapper']} style={{ backgroundColor, padding: `${yPadding}px 0` }}>
+    <div className={styles['generic-section-wrapper']} style={{ backgroundColor, marginBottom: `${marginBottom}px`, marginTop: `${marginTop}px` }}>
       <LayoutContainer>
-        <div className={styles['title']}>{title}</div>
+      {title && <div className={styles['title']}>{title}</div>}
         <div className={styles['generic-section']}>
           <div className={styles['content']}>{children}</div>
         </div>

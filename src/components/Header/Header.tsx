@@ -11,6 +11,7 @@ import LayoutContainer from '../LayoutContainer/LayoutContainer';
 
 function Header() {
   return (
+    <div className={styles['header-wrapper']}>
     <LayoutContainer>
       <div className={styles.header}>
         <div className={styles['hamburger-logo-container']}>
@@ -57,6 +58,7 @@ function Header() {
         </div>
       </div>
     </LayoutContainer>
+    </div>
   );
 }
 

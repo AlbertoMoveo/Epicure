@@ -54,7 +54,7 @@ const popDish = [
     title: "Pad Ki Mao",
     description: "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
     imageUrl: padKiImg,
-    icon: <img src={veganIcon} alt="Vegan Icon" />,
+    icon: <img src={spicyIcon} alt="Spicy Icon" />,
     price: "₪88",
   },
   {
@@ -62,7 +62,7 @@ const popDish = [
     title: "Garbanzo Frito",
     description: "Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa",
     imageUrl: garbanzoImg,
-    icon: <img src={vegetarianIcon} alt="Vegetarian Icon" />,
+    icon: <img src={spicyIcon} alt="Spicy Icon" />,
     price: "₪98",
   },
   {
@@ -70,7 +70,7 @@ const popDish = [
     title: "Smoked Pizza",
     description: "Basil dough, cashew 'butter', demi-glace, bison & radish",
     imageUrl: smokedImg,
-    icon: <img src={spicyIcon} alt="Spicy Icon" />,
+    icon: <img src={veganIcon} alt="Vegan Icon" />,
     price: "₪65",
   },
 ];
@@ -86,6 +86,7 @@ function Homepage() {
         ))}
         showMoreButton={true}
         moreButtonTitle="All Restaurants"
+        marginTop={40}
       />
       <PopularSection
         title="SIGNATURE DISH OF:"
@@ -103,8 +104,7 @@ function Homepage() {
       />
       <IconSection
         title="THE MEANING OF OUR ICONS:"
-        yPadding={39}
-        icons={[<img src={vegetarianIcon} alt="Vegetarian Icon" />, <img src={spicyIcon} alt="Spicy Icon" />, <img src={veganIcon} alt="Vegan Icon" />]}
+        icons={[<img src={spicyIcon} alt="Spicy Icon" />, <img src={vegetarianIcon} alt="Vegetarian Icon" />, <img src={veganIcon} alt="Vegan Icon" />]}
         iconTitles={['Spicy', 'Vegetarian', 'Vegan']}
       />
       <ChefOfTheWeek />

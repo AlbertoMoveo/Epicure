@@ -7,11 +7,12 @@ interface PopularSectionProps {
   cards: React.ReactNode[];
   showMoreButton?: boolean;
   moreButtonTitle?: string;
+  marginTop?: number;
 }
 
-const PopularSection: React.FC<PopularSectionProps> = ({ title, cards, showMoreButton, moreButtonTitle }) => {
+const PopularSection: React.FC<PopularSectionProps> = ({ title, cards, showMoreButton, moreButtonTitle, marginTop }) => {
   return (
-    <GenericSection title={`${title}`} yPadding={25}>
+    <GenericSection title={`${title}`} marginTop={marginTop}>
         <CardSection cards={cards}  moreButtonTitle={moreButtonTitle}/>
     </GenericSection>
   );

@@ -12,7 +12,7 @@ interface IconSectionProps {
 
 const IconSection: React.FC<IconSectionProps> = ({ title, icons, iconTitles, backgroundColor, yPadding }) => {
   return (
-    <GenericSection title={title} backgroundColor={'#fafafa'} yPadding={yPadding}>
+    <GenericSection title={title} backgroundColor={'#fafafa'}>
       <div className={styles['icon-section']}>
         {icons.map((icon, index) => (
           <div key={index} className={styles['icon']}>
