@@ -16,9 +16,10 @@ const About = () => {
           <div className={styles['title-mobile']}>About Us:</div>
             <p className={styles['description']}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non eu ipsum. Cras porta malesuada eros, eget blandit turpis suscipit at. Vestibulum sed massa in magna sodales porta. Vivamus elit urna, dignissim a vestibulum.
-            </p>
+              </p>
+              <br />
             <p className={styles['description']}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non eu ipsum. Cras porta malesuada eros.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a lacus vel justo fermentum bibendum non eu ipsum. Cras porta malesuada eros.
             </p>
           </div>
           <div className={styles['icons']}>
