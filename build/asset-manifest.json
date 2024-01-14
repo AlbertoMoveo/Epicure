@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5482d9ec.css",
+    "main.js": "/static/js/main.f68d29d7.js",
+    "static/js/787.3cfd0792.chunk.js": "/static/js/787.3cfd0792.chunk.js",
+    "static/media/hero-picture 1.png": "/static/media/hero-picture 1.fb0f9ec79492509a64ea.png",
+    "static/media/Smoked-Pizza.png": "/static/media/Smoked-Pizza.f9c5fc38b79f9c4fb580.png",
+    "static/media/Garbanzo-frito.png": "/static/media/Garbanzo-frito.7206c0d088c36e68f541.png",
+    "static/media/claro.png": "/static/media/claro.a08028ca288c1f440177.png",
+    "static/media/Pad-Ki-Mao.png": "/static/media/Pad-Ki-Mao.d972b4000b49dace964a.png",
+    "static/media/Lumina.png": "/static/media/Lumina.c01cc39ddb7117db20d2.png",
+    "static/media/tiger-lily.png": "/static/media/tiger-lily.93396066bf747cd2e66f.png",
+    "static/media/Onza.png": "/static/media/Onza.8e2bce8833545e292f23.png",
+    "static/media/Kitchen-Market.png": "/static/media/Kitchen-Market.08f5b5d9487ced5b74b5.png",
+    "static/media/Mashya.png": "/static/media/Mashya.a3b079ec8ac0df88759d.png",
+    "static/media/ChefWeek.png": "/static/media/ChefWeek.799e4adb7a5bab9ccda1.png",
+    "static/media/about-logo.svg": "/static/media/about-logo.dcb7cdae98de0bb1cfb6257619e4ed23.svg",
+    "static/media/HomeLogo.svg": "/static/media/HomeLogo.34d69c4daa16f78cffda3bf2d565916a.svg",
+    "static/media/Spicy.svg": "/static/media/Spicy.e6927436c851f1e540d487a3a0b18a65.svg",
+    "static/media/Vegetarian.svg": "/static/media/Vegetarian.9fcc334376747865997f2c55a3c2e7ba.svg",
+    "static/media/ProfileLogo.svg": "/static/media/ProfileLogo.d02b5a5f313fdd9ff0bb4204e5caf48a.svg",
+    "static/media/Vegan.svg": "/static/media/Vegan.29193c8968dc4a4dd123c58f676a6cbe.svg",
+    "static/media/More-button.svg": "/static/media/More-button.4aa4b0a25f4f5c54e1862e6a181f69d8.svg",
+    "static/media/search-icon.svg": "/static/media/search-icon.90e3e20af65643ea5edf6622f61e55c5.svg",
+    "static/media/SearchLogo.svg": "/static/media/SearchLogo.1b45ce15a061dad9502c01fcd47e8887.svg",
+    "static/media/Apple-icon.svg": "/static/media/Apple-icon.a935f95e871ccae92d577cb3cf90ce82.svg",
+    "index.html": "/index.html",
+    "static/media/CartLogo.svg": "/static/media/CartLogo.6e0f0b078aede7a664ab605f0a0a7ee3.svg",
+    "static/media/Hamburger-Logo.svg": "/static/media/Hamburger-Logo.aa8401868f4e67df31c3f5136f04a70a.svg",
+    "static/media/Google-icon.svg": "/static/media/Google-icon.22f9dbdd4f1d04ba000de81d02e222f6.svg",
+    "main.5482d9ec.css.map": "/static/css/main.5482d9ec.css.map",
+    "main.f68d29d7.js.map": "/static/js/main.f68d29d7.js.map",
+    "787.3cfd0792.chunk.js.map": "/static/js/787.3cfd0792.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5482d9ec.css",
+    "static/js/main.f68d29d7.js"
+  ]
+}
