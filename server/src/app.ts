@@ -24,9 +24,9 @@ async function connect() {
   }
 }
 
-app.use('/api', chefRoutes);
-app.use('/api', restaurantRoutes);
-app.use('/api', dishRoutes);
+app.use('/api/v1', chefRoutes);
+app.use('/api/v1', restaurantRoutes);
+app.use('/api/v1', dishRoutes);
 
 async function startServer() {
   try {
@@ -40,4 +40,7 @@ async function startServer() {
   }
 }
 
-startServer();
+startServer(); 
+
+
+// Version, Handlers, Delete, Local mongoDB

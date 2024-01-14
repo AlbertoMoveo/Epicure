@@ -7,7 +7,8 @@ const router = Router();
 router.get('/dishes', async (req, res) => {
   try {
     const dishes = await DishModel.find();
-    res.json(dishes);
+    const activeDishes = dishes.filter((dish) => dish.isActive);
+    return res.status(200).json(activeDishes);
   } catch (error) {
     res.status(500).json({ error: 'Internal Serer Error'});
   }
@@ -17,27 +18,27 @@ router.get('/dishes', async (req, res) => {
 router.get('/dishes/:id', async (req, res) => {
   try {
     const dish = await DishModel.findById(req.params.id);
-    if (!dish) {
+    if (!dish || !dish.isActive) {
       return res.status(404).json({ error: 'Dish not found' });
     }
-    res.json(dish)
+    return res.status(200).json(dish)
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-// Create
+// Post
 router.post('/dishes', async (req, res) => {
   try {
     const newDish = await DishModel.create(req.body);
-    res.json(newDish);
+    return res.status(200).json(newDish);
   } catch (error){
     res.status(500).json({ error: "Internal Server Error" });
   }
 })
 
 // Update
-router.put('dishes/:id', async (req, res) => {
+router.put('/dishes/:id', async (req, res) => {
   try {
     const updatedDish = await DishModel.findByIdAndUpdate(
       req.params.id,
@@ -47,7 +48,7 @@ router.put('dishes/:id', async (req, res) => {
     if (!updatedDish) {
       return res.status(404).json({ error: 'Dish not found'});
     }
-    res.json(updatedDish);
+    return res.status(200).json(updatedDish);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error'});
   }
@@ -56,11 +57,11 @@ router.put('dishes/:id', async (req, res) => {
 // Delete
 router.delete('/dishes/:id', async (req, res) => {
   try {
-    const deletedDish = await DishModel.findById(req.params.id);
+    const deletedDish = await DishModel.findByIdAndUpdate(req.params.id, { isActive: false }, { new: true });
     if (!deletedDish) {
       return res.status(404).json({ error: 'Dish not found'});
     }
-    res.json(deletedDish);
+    return res.status(200).json(deletedDish);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error'});
   }

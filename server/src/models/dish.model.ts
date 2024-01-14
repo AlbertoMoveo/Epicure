@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose from 'mongoose';
 import IRestaurant from './restaurant.model';
 import { ObjectId } from 'mongodb';
 
@@ -7,7 +7,8 @@ interface IDish {
   price: number,
   ingredients?: string,
   tags?: string,
-  restaurant: IRestaurant
+  restaurant: IRestaurant,
+  isActive?: boolean
 };
 
 const dishSchema = new mongoose.Schema<IDish>({
@@ -16,6 +17,7 @@ const dishSchema = new mongoose.Schema<IDish>({
   ingredients: [{ type: String }],
   tags: [{ type: String }],
   restaurant: { type: ObjectId, ref: 'Restaurant', required: true },
+  isActive: { type: Boolean, default: true}
 });
 
 export const DishModel = mongoose.model('Dish', dishSchema);
