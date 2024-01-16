@@ -3,9 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from'dotenv';
 
-import chefRoutes from './routes/chef.route';
-import restaurantRoutes from './routes/restaurant.route';
-import dishRoutes from './routes/dish.route';
+import apiRoutes from './routes/api.route';
 
 const app = express();
 dotenv.config();
@@ -24,9 +22,7 @@ async function connect() {
   }
 }
 
-app.use('/api/v1', chefRoutes);
-app.use('/api/v1', restaurantRoutes);
-app.use('/api/v1', dishRoutes);
+app.use('/api', apiRoutes);
 
 async function startServer() {
   try {
@@ -40,7 +36,12 @@ async function startServer() {
   }
 }
 
-startServer(); 
+startServer();
 
+// Version (done), Handlers (done), Delete (done), Local mongoDB (done)
 
-// Version (done), Handlers (done), Delete (done), Local mongoDB
+// Controllers and Handlers separetly (done), API routes in layers (done)
+
+// (done) Search API call - response is of three arrays that each of these is an object relevant to the search value - only in the name
+
+// (done) Change response in get to instead of returning the ID to get the whole object (2 possible ways) - only for one object

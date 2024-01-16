@@ -1,16 +1,16 @@
 import { Router } from 'express';
-import ChefHandlers from '../handlers/chef.handler';
+import ChefControllers from '../controllers/chef.controller';
 
-const router = Router();
+const chefRouter = Router();
 
-router.post('/chefs', ChefHandlers.createChef);
+chefRouter.post('/', ChefControllers.createChef);
 
-router.get('/chefs', ChefHandlers.getAllChefs);
+chefRouter.get('/', ChefControllers.getAllChefs);
 
-router.get('/chefs/:id', ChefHandlers.getChefById);
+chefRouter.get('/:id', ChefControllers.getChefById);
 
-router.put('/chefs/:id', ChefHandlers.updateChef);
+chefRouter.put('/:id', ChefControllers.updateChef);
 
-router.delete('/chefs/:id', ChefHandlers.deleteChef);
+chefRouter.delete('/:id', ChefControllers.deleteChef);
 
-export default router;
+export default chefRouter;

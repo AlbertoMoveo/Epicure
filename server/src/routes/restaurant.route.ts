@@ -1,16 +1,16 @@
 import { Router } from 'express';
-import RestaurantHandlers from '../handlers/restaurant.handler';
+import RestaurantControllers from '../controllers/restaurant.controller';
 
-const router = Router();
+const restaurantRouter = Router();
 
-router.post('/restaurants', RestaurantHandlers.createRestaurant);
+restaurantRouter.post('/', RestaurantControllers.createRestaurant);
 
-router.get('/restaurants', RestaurantHandlers.getAllRestaurants);
+restaurantRouter.get('/', RestaurantControllers.getAllRestaurants);
 
-router.get('/restaurants/:id', RestaurantHandlers.getRestaurantById);
+restaurantRouter.get('/:id', RestaurantControllers.getRestaurantById);
 
-router.put('/restaurants/:id', RestaurantHandlers.updateRestaurant);
+restaurantRouter.put('/:id', RestaurantControllers.updateRestaurant);
 
-router.delete('/restaurants/:id', RestaurantHandlers.deleteRestaurant);
+restaurantRouter.delete('/:id', RestaurantControllers.deleteRestaurant);
 
-export default router;
+export default restaurantRouter;

@@ -1,16 +1,16 @@
 import { Router } from 'express';
-import DishHandlers from '../handlers/dish.handler';
+import DishControllers from '../controllers/dish.controller';
 
-const router = Router();
+const dishRouter = Router();
 
-router.post('/dishes', DishHandlers.createDish);
+dishRouter.post('/', DishControllers.createDish);
 
-router.get('/dishes', DishHandlers.getAllDishes);
+dishRouter.get('/', DishControllers.getAllDishes);
 
-router.get('/dishes/:id', DishHandlers.getDishById);
+dishRouter.get('/:id', DishControllers.getDishById);
 
-router.put('/dishes/:id', DishHandlers.updateDish);
+dishRouter.put('/:id', DishControllers.updateDish);
 
-router.delete('/dishes/:id', DishHandlers.deleteDish);
+dishRouter.delete('/:id', DishControllers.deleteDish);
 
-export default router;
+export default dishRouter;
