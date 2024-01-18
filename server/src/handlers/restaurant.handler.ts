@@ -11,6 +11,24 @@ const RestaurantHandler = {
     updateRestaurant: async (id: string, data: any) => RestaurantModel.findByIdAndUpdate(id, data, { new: true }),
 
     deleteRestaurant: async (id: string) => RestaurantModel.findByIdAndUpdate(id, { isActive: false }, { new: true }),
+
+    getAllRestaurantsAggregate: async () => RestaurantModel.aggregate([
+        { $match: { isActive: true } },
+        { $lookup: {
+                from: 'dishes',
+                localField: 'dishes',
+                foreignField: '_id',
+                as: 'dishes', },
+        },
+        { $addFields: {
+                dishes: {
+                    $filter: {
+                        input: '$dishes',
+                        as: 'dish',
+                        cond: { $eq: ['$$dish.isActive', true] },},
+                },
+            },
+        },]),
     
 };
 

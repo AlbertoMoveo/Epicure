@@ -1,9 +1,9 @@
 import express from 'express';
 
-import dishRoutes from './dish.route';
-import chefRoutes from './chef.route';
-import restaurantRoutes from './restaurant.route';
-import searchRoutes from './search.route';
+import dishRoutes from './endpoints/dish.route';
+import chefRoutes from './endpoints/chef.route';
+import restaurantRoutes from './endpoints/restaurant.route';
+import searchRoutes from './endpoints/search.route';
 
 const v1Router = express.Router();
 
