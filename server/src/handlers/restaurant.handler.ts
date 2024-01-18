@@ -4,7 +4,7 @@ const RestaurantHandler = {
 
     createRestaurant: async (data: any) => RestaurantModel.create(data),
 
-    getAllRestaurants: async () => RestaurantModel.find({ isActive: {$ne: false} }).populate('dishes'),
+    getAllRestaurants: async () => RestaurantModel.find({ isActive: { $ne: false } }).populate('dishes'),
 
     getRestaurantById: async (id: string) => RestaurantModel.findById(id).populate('dishes'),
 
@@ -14,22 +14,26 @@ const RestaurantHandler = {
 
     getAllRestaurantsAggregate: async () => RestaurantModel.aggregate([
         { $match: { isActive: true } },
-        { $lookup: {
+        {
+            $lookup: {
                 from: 'dishes',
                 localField: 'dishes',
                 foreignField: '_id',
-                as: 'dishes', },
+                as: 'dishes',
+            },
         },
-        { $addFields: {
+        {
+            $addFields: {
                 dishes: {
                     $filter: {
                         input: '$dishes',
                         as: 'dish',
-                        cond: { $eq: ['$$dish.isActive', true] },},
+                        cond: { $eq: ['$$dish.isActive', true] },
+                    },
                 },
             },
         },]),
-    
+
 };
 
 export default RestaurantHandler;

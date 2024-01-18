@@ -39,24 +39,3 @@ async function startServer() {
 }
 
 startServer();
-
-// Version (done), Handlers (done), Delete (done), Local mongoDB (done)
-
-// (done) Controllers and Handlers separetly, API routes in layers (done)
-
-// (done) Search API call - response is of three arrays that each of these is an object relevant to the search value - only in the name
-
-// (done) Change response in get to instead of returning the ID to get the whole object (2 possible ways) - only for one object
-
-
-// aggregate func that takes an array of objects of steps 
-
-// (done) separate routes into directories 
-
-// use aggregation in db query to bring only active dishes 
-
-// (done) API documentation (swagger) under /api 
-
-// (done) parallelize calls for matches between objects
-
-// (done) change query from endpoint to parameter (post - body) / (get - query param) -> use get 
