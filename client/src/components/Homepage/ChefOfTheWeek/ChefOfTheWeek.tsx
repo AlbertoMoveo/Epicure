@@ -1,44 +1,56 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './ChefOfTheWeek.module.scss';
 import GenericSection from '../GenericSection/GenericSection';
 import CardSection from '../../CardSection/CardSection';
 import Card from '../../Card/Card';
 
-import chefOfTheWeekImage from '../../../assets/png/ChefWeek.png';
-import onzaImg from '../../../assets/png/Onza.png';
-import kitchenImg from '../../../assets/png/Kitchen-Market.png';
-import mashyaImg from '../../../assets/png/Mashya.png';
-
-const chefOfTheWeekRestaurants = [
-  { id: "0", title: "Onza", imageUrl: onzaImg, description: "" },
-  { id: "1", title: "Kitchen Market", imageUrl: kitchenImg, description: "" },
-  { id: "2", title: "Mashya", imageUrl: mashyaImg, description: "" },
-];
+import { IChef, IRestaurant } from '../../../Interfaces/Interfaces';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchChefData } from '../../../redux/chefs/chefThunk';
+import { fetchRestaurantData } from '../../../redux/popRestaurant/popRestuarantThunk';
+import { AppDispatch, RootState } from '../../../redux/store';
 
 function ChefOfTheWeek() {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await Promise.all([
+        dispatch(fetchChefData()),
+        dispatch(fetchRestaurantData())
+      ]);
+    };
+  
+    fetchData();
+  }, [dispatch]);
+
+  const chefOfTheWeek: IChef = useSelector((state: RootState) => state.chef.currentChefData[2] as IChef);
+  const restaurants: IRestaurant[] = useSelector((state: RootState) => state.restaurant.currentRestaurantData as IRestaurant[]);
+
+  const chefName: string = chefOfTheWeek?.name;
+  const chefOfTheWeekRestaurants: IRestaurant[] = restaurants.filter((restaurant) => restaurant.chefName === chefName);
+
   return (
     <GenericSection title="Chef of the Week:">
       <div className={styles['chef-of-the-week-container']}>
         <div className={styles['chef-of-the-week-content']}>
           <div className={styles['chef-of-the-week-image']}>
-            <img src={chefOfTheWeekImage} alt="Chef of the Week" />
+          <img src={chefOfTheWeek? chefOfTheWeek.image : ''} alt={"Chef of the Week"} className={styles['chef-of-the-week-image']} />
             <div className={styles['chef-name-overlay']}>
-              <p>Yossi Shitrit</p>
+              <p>{chefOfTheWeek ? chefOfTheWeek.name : 'Chef Name'}</p>
             </div>
           </div>
           <p className={styles['chef-of-the-week-description']}>
-            Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades,
-            including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav Udim.
-            Shitrit's creativity and culinary acumen born of long experience are expressed in every detail of each and every dish.
+            {chefOfTheWeek ? chefOfTheWeek.description : 'Chef description'}
           </p>
         </div>
       </div>
-      <h3 className={styles['card-section-title']}>Yossi’s Restaurants</h3>
-      <div className={styles['card-section']}>
-        <CardSection
+             <h3 className={styles['card-section-title']}>{chefName}’s Restaurants</h3>
+       <div className={styles['card-section']}>
+         <CardSection
           cards={chefOfTheWeekRestaurants.map((restaurant) => (
-            <Card key={restaurant.id} title={restaurant.title} imageUrl={restaurant.imageUrl} minHeight={150}>
-              <p>{restaurant.description}</p>
+            <Card key={restaurant.id} title={restaurant.name} imageUrl={restaurant.image} minHeight={150}>
+              <p>{''}</p>
             </Card>
           ))}
         />
@@ -48,3 +60,4 @@ function ChefOfTheWeek() {
 }
 
 export default ChefOfTheWeek;
+

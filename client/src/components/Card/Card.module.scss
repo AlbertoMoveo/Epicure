@@ -9,8 +9,15 @@
 }
 
 .card-image {
+  height: 265px;
   background: lightgray 50% / cover no-repeat;
   width: 100%;
+}
+
+@include desktop {
+  .card-image {
+    height: 100%;
+  }
 }
 
 .card-content {

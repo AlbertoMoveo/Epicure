@@ -11,6 +11,9 @@ dotenv.config();
 app.use(bodyParser.json());
 swaggerSetup(app);
 
+const cors = require('cors');
+app.use(cors());
+
 const uri: string = `${process.env.MONGODB_URI}`;
 
 async function connect() {

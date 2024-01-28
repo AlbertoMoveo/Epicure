@@ -7,6 +7,8 @@ interface IDish {
   price: number,
   ingredients?: string,
   tags?: string,
+  image: string,
+  description: string,
   restaurant: IRestaurant,
   isActive?: boolean
 };
@@ -16,6 +18,8 @@ const dishSchema = new mongoose.Schema<IDish>({
   price: { type: Number, required: true },
   ingredients: [{ type: String }],
   tags: [{ type: String }],
+  image: { type: String },
+  description: { type: String },
   restaurant: { type: ObjectId, ref: 'Restaurant', required: true },
   isActive: { type: Boolean, default: true }
 });
