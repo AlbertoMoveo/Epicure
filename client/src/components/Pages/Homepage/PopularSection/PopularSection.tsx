@@ -1,6 +1,6 @@
 import React from 'react';
 import GenericSection from '../GenericSection/GenericSection';
-import CardSection from '../../CardSection/CardSection';
+import CardSection from '../../../CardSection/CardSection';
 
 interface PopularSectionProps {
   title: string;

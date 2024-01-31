@@ -1,6 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchRestaurantData } from './popRestuarantThunk';
-const initialState = {
+import { fetchRestaurantData, fetchRestaurantDataByRating } from './popRestuarantThunk';
+import { IRestaurant } from '../../Interfaces/Interfaces';
+
+interface restaurantSliceState { 
+  currentIndex: number;
+  currentRestaurant: IRestaurant| null;
+  currentRestaurantData: IRestaurant[];
+  status: string;
+  error: null;}
+
+const initialState :restaurantSliceState= {
   currentIndex: 0,
   currentRestaurant: null,
   currentRestaurantData: [],
@@ -32,10 +41,21 @@ const restaurantSlice = createSlice({
       })
       .addCase(fetchRestaurantData.rejected, (state, action) => {
         state.status = 'failed';
+      })
+      .addCase(fetchRestaurantDataByRating.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchRestaurantDataByRating.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.currentRestaurantData = action.payload;
+        state.currentRestaurant = action.payload[state.currentIndex];
+      })
+      .addCase(fetchRestaurantDataByRating.rejected, (state, action) => {
+        state.status = 'failed';
       });
   },
 });
 
 export const { swapRestaurantData } = restaurantSlice.actions;
-export { fetchRestaurantData }; 
+export { fetchRestaurantData, fetchRestaurantDataByRating }; 
 export default restaurantSlice.reducer;

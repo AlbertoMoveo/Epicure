@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.scss';
-import searchIcon from '../../../assets/svg/search-icon.svg';
+import searchIcon from '../../../../assets/svg/search-icon.svg';
 
 const Hero: React.FC = () => {
   return (

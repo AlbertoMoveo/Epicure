@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styles from './GenericSection.module.scss';
-import LayoutContainer from '../../LayoutContainer/LayoutContainer';
+import LayoutContainer from '../../../LayoutContainer/LayoutContainer';
 
 interface GenericSectionProps {
   title?: string;

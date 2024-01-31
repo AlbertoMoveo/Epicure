@@ -1,7 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchChefData } from './chefThunk';
+import { IChef } from '../../Interfaces/Interfaces';
 
-const initialState = {
+interface  chefSliceState { 
+  currentIndex: number
+  currentChef: IChef | null,
+  currentChefData: IChef[]
+  status: string
+  error: null,
+}
+
+const initialState:chefSliceState = {
   currentIndex: 0,
   currentChef: null,
   currentChefData: [],

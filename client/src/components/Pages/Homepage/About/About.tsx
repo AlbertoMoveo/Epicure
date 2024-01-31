@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './About.module.scss';
 import GenericSection from '../GenericSection/GenericSection';
 
-import aboutImg from '../../../assets/svg/about-logo.svg';
-import googleIcon from '../../../assets/svg/Google-icon.svg';
-import appleIcon from '../../../assets/svg/Apple-icon.svg';
+import aboutImg from '../../../../assets/svg/about-logo.svg';
+import googleIcon from '../../../../assets/svg/Google-icon.svg';
+import appleIcon from '../../../../assets/svg/Apple-icon.svg';
 
 const About = () => {
   return (

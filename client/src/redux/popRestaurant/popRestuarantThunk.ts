@@ -9,3 +9,12 @@ export const fetchRestaurantData = createAsyncThunk('restaurant/fetchRestaurantD
       throw error;
     }
   });
+
+export const fetchRestaurantDataByRating = createAsyncThunk('restaurant/fetchRestaurantDataByRating', async () => {
+  try {
+    const response = await axios.get('http://localhost:3001/api/v1/restaurants/getAllRestaurantsByRating');
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+})
