@@ -6,6 +6,7 @@ import 'swiper/scss';
 
 import moreButton from '../../assets/svg/More-button.svg';
 
+
 interface CardSectionProps {
   cards: ReactNode[];
   backgroundColor?: string;
@@ -19,6 +20,7 @@ const CardSection: React.FC<CardSectionProps> = ({ cards, backgroundColor, yPadd
       <Swiper
         effect="coverflow"
         slidesPerView={3}
+        autoplay={true}
         initialSlide={1}
         spaceBetween={24}
         coverflowEffect={{
@@ -36,8 +38,8 @@ const CardSection: React.FC<CardSectionProps> = ({ cards, backgroundColor, yPadd
             slidesPerView: 3,
             initialSlide: 0,
             autoHeight: true,
-            allowSlidePrev: false,
-            allowSlideNext: false,
+            allowSlidePrev: true,
+            allowSlideNext: true,
           },
           // Mobile
           0: {

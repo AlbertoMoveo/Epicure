@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import styles from './ChefOfTheWeek.module.scss';
 import GenericSection from '../GenericSection/GenericSection';
-import CardSection from '../../CardSection/CardSection';
-import Card from '../../Card/Card';
+import CardSection from '../../../CardSection/CardSection';
+import Card from '../../../Card/Card';
 
-import { IChef, IRestaurant } from '../../../Interfaces/Interfaces';
+import { IChef, IRestaurant } from '../../../../Interfaces/Interfaces';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchChefData } from '../../../redux/chefs/chefThunk';
-import { fetchRestaurantData } from '../../../redux/popRestaurant/popRestuarantThunk';
-import { AppDispatch, RootState } from '../../../redux/store';
+import { fetchChefData } from '../../../../redux/chefs/chefThunk';
+import { fetchRestaurantData } from '../../../../redux/popRestaurant/popRestuarantThunk';
+import { AppDispatch, RootState } from '../../../../redux/store';
 
 function ChefOfTheWeek() {
   const dispatch = useDispatch<AppDispatch>();
@@ -24,8 +24,8 @@ function ChefOfTheWeek() {
     fetchData();
   }, [dispatch]);
 
-  const chefOfTheWeek: IChef = useSelector((state: RootState) => state.chef.currentChefData[2] as IChef);
-  const restaurants: IRestaurant[] = useSelector((state: RootState) => state.restaurant.currentRestaurantData as IRestaurant[]);
+  const chefOfTheWeek: IChef = useSelector((state: RootState) => state.chef.currentChefData[3]);
+  const restaurants: IRestaurant[] = useSelector((state: RootState) => state.restaurant.currentRestaurantData);
 
   const chefName: string = chefOfTheWeek?.name;
   const chefOfTheWeekRestaurants: IRestaurant[] = restaurants.filter((restaurant) => restaurant.chefName === chefName);

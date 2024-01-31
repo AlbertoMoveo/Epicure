@@ -18,7 +18,7 @@ const DishCard: React.FC<DishCardProps> = ({ title, description, imageUrl, icon,
         <p className={styles['dish-description']}>{description}</p>
         <div className={styles['dish-price-container']}>
           <div className={styles['dish-divider']}></div>
-          <p className={styles['dish-price']}>{price}</p>
+          <p className={styles['dish-price']}>₪ {price}</p>
           <div className={styles['dish-divider']}></div>
         </div>
     </Card>

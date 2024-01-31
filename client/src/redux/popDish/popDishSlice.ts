@@ -1,7 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchDishData } from './popDishThunk';
+import { IDish } from '../../Interfaces/Interfaces';
 
-const initialState = {
+interface initialStateStatus {
+  currentIndex: number;
+  currentDish: IDish | null;
+  currentDishData: IDish[];
+  status: string;
+  error: null,
+}
+
+const initialState: initialStateStatus = {
   currentIndex: 0,
   currentDish: null,
   currentDishData: [],
