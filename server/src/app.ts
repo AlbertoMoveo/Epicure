@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { swaggerSetup } from './utils/swagger';
 
 import apiRoutes from './routes/api/api.route';
@@ -11,7 +12,6 @@ dotenv.config();
 app.use(bodyParser.json());
 swaggerSetup(app);
 
-const cors = require('cors');
 app.use(cors());
 
 const uri: string = `${process.env.MONGODB_URI}`;

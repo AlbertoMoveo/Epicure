@@ -23,6 +23,33 @@ const RestaurantController = {
         }
     },
 
+    getAllRestaurantsByRating: async (req: Request, res: Response) => {
+        try {
+            const restaurants = await RestaurantHandler.getAllRestaurants();
+            if (restaurants.length === 0) {
+                return res.status(404).json({ error: 'No active restaurants found in DB' });
+            }
+            const sortedRestaurants = restaurants.sort((a, b) => b.rating - a.rating);
+            return res.status(200).json(sortedRestaurants)
+        } catch (error) {
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+    },
+
+    getAllRestaurantsPaginated: async (req: Request, res: Response) => {
+        try {
+            let page: number = typeof req.query.p === 'string' ? parseInt(req.query.p, 10) : 0;
+            const restaurantsPerPage: number = 3;
+            const restaurants = await RestaurantHandler.getAllRestaurantsPaginated(page, restaurantsPerPage);
+            if (restaurants.length === 0) {
+                return res.status(404).json({ error: 'No active restaurants found in DB' });
+            }
+            return res.status(200).json(restaurants);
+        } catch (error) {
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+    },
+
     getRestaurantById: async (req: Request, res: Response) => {
         try {
             const restaurant = await RestaurantHandler.getRestaurantById(req.params.id);

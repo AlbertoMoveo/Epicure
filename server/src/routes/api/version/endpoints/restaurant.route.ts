@@ -111,6 +111,10 @@ restaurantRouter.post('/', RestaurantControllers.createRestaurant);
  */
 restaurantRouter.get('/', RestaurantControllers.getAllRestaurants);
 
+restaurantRouter.get('/getAllRestaurantsByRating', RestaurantControllers.getAllRestaurantsByRating);
+
+restaurantRouter.get('/getAllResturantsPaginated', RestaurantControllers.getAllRestaurantsPaginated);
+
 /**
  * @swagger
  * /restaurants/{id}:

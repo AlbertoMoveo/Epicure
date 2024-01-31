@@ -2,17 +2,38 @@ import { RestaurantModel } from "../models/restaurant.model";
 
 const RestaurantHandler = {
 
-    createRestaurant: async (data: any) => RestaurantModel.create(data),
+    createRestaurant: async (data: any) => 
+    RestaurantModel
+    .create(data),
 
-    getAllRestaurants: async () => RestaurantModel.find({ isActive: { $ne: false } }).populate('dishes'),
+    getAllRestaurants: async () => 
+    RestaurantModel
+    .find({ isActive: { $ne: false } })
+    .populate('dishes'),
 
-    getRestaurantById: async (id: string) => RestaurantModel.findById(id).populate('dishes'),
+    getRestaurantById: async (id: string) => 
+    RestaurantModel
+    .findById(id)
+    .populate('dishes'),
 
-    updateRestaurant: async (id: string, data: any) => RestaurantModel.findByIdAndUpdate(id, data, { new: true }),
+    updateRestaurant: async (id: string, data: any) => 
+    RestaurantModel
+    .findByIdAndUpdate(id, data, { new: true }),
 
-    deleteRestaurant: async (id: string) => RestaurantModel.findByIdAndUpdate(id, { isActive: false }, { new: true }),
+    deleteRestaurant: async (id: string) => 
+    RestaurantModel
+    .findByIdAndUpdate(id, { isActive: false }, { new: true }),
 
-    getAllRestaurantsAggregate: async () => RestaurantModel.aggregate([
+    getAllRestaurantsPaginated: async(page: number, restaurantsPerPage: number) => 
+    RestaurantModel
+    .find({ isActive: { $ne: false } })
+    .populate('dishes')
+    .skip(page * restaurantsPerPage)
+    .limit(restaurantsPerPage),
+
+    getAllRestaurantsAggregate: async () => 
+    RestaurantModel
+    .aggregate([
         { $match: { isActive: true } },
         {
             $lookup: {
