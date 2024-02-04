@@ -24,7 +24,10 @@ function ChefOfTheWeek() {
     fetchData();
   }, [dispatch]);
 
-  const chefOfTheWeek: IChef = useSelector((state: RootState) => state.chef.currentChefData[3]);
+
+  const chefData = useSelector((state: RootState) => state.chef.currentChefData);
+  const randomIndex = Math.floor(Math.random() * chefData.length);
+  const chefOfTheWeek: IChef = chefData[randomIndex];
   const restaurants: IRestaurant[] = useSelector((state: RootState) => state.restaurant.currentRestaurantData);
 
   const chefName: string = chefOfTheWeek?.name;

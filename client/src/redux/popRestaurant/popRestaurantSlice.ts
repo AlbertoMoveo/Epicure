@@ -33,8 +33,6 @@ const restaurantSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchRestaurantData.fulfilled, (state, action) => {
-        console.log(action.payload);
-        
         state.status = 'succeeded';
         state.currentRestaurantData = action.payload;
         state.currentRestaurant = action.payload[state.currentIndex];

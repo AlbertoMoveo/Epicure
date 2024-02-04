@@ -1,5 +1,6 @@
 import express, { Router } from 'express';
 import SearchController from '../../../../controllers/search.controller';
+import verifyToken from '../../../../middleware/middleware';
 
 const searchRouter: Router = express.Router();
 
@@ -44,6 +45,6 @@ const searchRouter: Router = express.Router();
  *                   items:
  *                     $ref: '#/components/schemas/Dish'
  */
-searchRouter.get('/', SearchController.search);
+searchRouter.get('/', verifyToken, SearchController.search);
 
 export default searchRouter;
