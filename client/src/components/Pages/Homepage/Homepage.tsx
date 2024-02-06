@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Fade } from "react-awesome-reveal";
 import RestaurantCard from '../../RestaurantCard/RestaurantCard';
 import DishCard from '../../DishCard/DischCard';
 import PopularSection from './PopularSection/PopularSection';
@@ -47,6 +48,7 @@ const Homepage = () => {
 
   return (
     <>
+    <Fade>
       <Hero />
       <PopularSection
         title="popular restaurant in epicure:"
@@ -87,6 +89,7 @@ const Homepage = () => {
       />
       <ChefOfTheWeek />
       <About />
+      </Fade>
     </>
   );
 }

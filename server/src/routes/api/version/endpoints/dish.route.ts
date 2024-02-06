@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import DishControllers from '../../../../controllers/dish.controller';
+import verifyToken from '../../../../middleware/middleware';
 
 const dishRouter = Router();
 
@@ -89,7 +90,7 @@ const dishRouter = Router();
  *             schema:
  *               $ref: '#/components/schemas/Dish'
  */
-dishRouter.post('/', DishControllers.createDish);
+dishRouter.post('/', verifyToken, DishControllers.createDish);
 
 /**
  * @swagger
@@ -158,7 +159,7 @@ dishRouter.get('/:id', DishControllers.getDishById);
  *             schema:
  *               $ref: '#/components/schemas/Dish'
  */
-dishRouter.put('/:id', DishControllers.updateDish);
+dishRouter.put('/:id', verifyToken, DishControllers.updateDish);
 
 /**
  * @swagger
@@ -181,6 +182,6 @@ dishRouter.put('/:id', DishControllers.updateDish);
  *             schema:
  *               $ref: '#/components/schemas/Dish'
  */
-dishRouter.delete('/:id', DishControllers.deleteDish);
+dishRouter.delete('/:id', verifyToken, DishControllers.deleteDish);
 
 export default dishRouter;

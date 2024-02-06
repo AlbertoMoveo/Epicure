@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import ChefControllers from '../../../../controllers/chef.controller';
+import verifyToken from '../../../../middleware/middleware';
 
 const chefRouter = Router();
 
@@ -89,7 +90,7 @@ const chefRouter = Router();
  *             schema:
  *               $ref: '#/components/schemas/Chef'
  */
-chefRouter.post('/', ChefControllers.createChef);
+chefRouter.post('/', verifyToken, ChefControllers.createChef);
 
 /**
  * @swagger
@@ -158,7 +159,7 @@ chefRouter.get('/:id', ChefControllers.getChefById);
  *             schema:
  *               $ref: '#/components/schemas/Chef'
  */
-chefRouter.put('/:id', ChefControllers.updateChef);
+chefRouter.put('/:id', verifyToken, ChefControllers.updateChef);
 
 /**
  * @swagger
@@ -181,6 +182,6 @@ chefRouter.put('/:id', ChefControllers.updateChef);
  *             schema:
  *               $ref: '#/components/schemas/Chef'
  */
-chefRouter.delete('/:id', ChefControllers.deleteChef);
+chefRouter.delete('/:id', verifyToken, ChefControllers.deleteChef);
 
 export default chefRouter;

@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import RestaurantControllers from '../../../../controllers/restaurant.controller';
+import verifyToken from '../../../../middleware/middleware';
 
 const restaurantRouter = Router();
 
@@ -91,7 +92,7 @@ const restaurantRouter = Router();
  *             schema:
  *               $ref: '#/components/schemas/Restaurant'
  */
-restaurantRouter.post('/', RestaurantControllers.createRestaurant);
+restaurantRouter.post('/', verifyToken, RestaurantControllers.createRestaurant);
 
 /**
  * @swagger
@@ -164,7 +165,7 @@ restaurantRouter.get('/:id', RestaurantControllers.getRestaurantById);
  *             schema:
  *               $ref: '#/components/schemas/Restaurant'
  */
-restaurantRouter.put('/:id', RestaurantControllers.updateRestaurant);
+restaurantRouter.put('/:id', verifyToken, RestaurantControllers.updateRestaurant);
 
 /**
  * @swagger
@@ -187,6 +188,6 @@ restaurantRouter.put('/:id', RestaurantControllers.updateRestaurant);
  *             schema:
  *               $ref: '#/components/schemas/Restaurant'
  */
-restaurantRouter.delete('/:id', RestaurantControllers.deleteRestaurant);
+restaurantRouter.delete('/:id', verifyToken, RestaurantControllers.deleteRestaurant);
 
 export default restaurantRouter;

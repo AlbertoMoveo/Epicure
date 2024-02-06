@@ -34,8 +34,6 @@ const chefSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchChefData.fulfilled, (state, action) => {
-        console.log(action.payload);
-        
         state.status = 'succeeded';
         state.currentChefData = action.payload;
         state.currentChef = action.payload[state.currentIndex];
