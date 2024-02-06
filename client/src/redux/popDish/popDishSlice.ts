@@ -33,9 +33,7 @@ const dishSlice = createSlice({
       .addCase(fetchDishData.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchDishData.fulfilled, (state, action) => {
-        console.log(action.payload);
-        
+      .addCase(fetchDishData.fulfilled, (state, action) => {        
         state.status = 'succeeded';
         state.currentDishData = action.payload;
         state.currentDish = action.payload[state.currentIndex];
