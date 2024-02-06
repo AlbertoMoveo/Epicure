@@ -1,0 +1,32 @@
+@import '../../../LayoutContainer/LayoutContainer.module.scss';
+
+.generic-section-wrapper {
+  padding: 20px 0;
+
+  @include desktop {
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 35px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+
+    @include desktop {
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 30px;
+      text-align: center;
+    }
+
+  }
+
+}

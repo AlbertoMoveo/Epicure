@@ -1,0 +1,37 @@
+@import '../LayoutContainer/LayoutContainer.module.scss';
+
+.card-section {
+  height: auto;
+  position: relative;
+
+  .card {
+    height: 100%;
+  }
+
+  .more-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 18px;
+
+    @include desktop {
+      font-size: 24px;
+      margin-top: 42px;
+      justify-content: end;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      margin-left: 14px;
+    }
+  }
+}

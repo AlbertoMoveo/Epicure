@@ -1,0 +1,78 @@
+@import "../../../assets/styling/mixins.scss";
+
+.main {
+  padding-top: 50px;
+
+  @include desktop {
+    padding-top: 80px;
+  }
+}
+
+.card-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: #F9F4EA;
+  height: 320px;
+  width: 380px;
+
+  @include desktop {
+    width: 300px;
+    height: 100%;
+  }
+}
+
+.card-image {
+  background: lightgray 50% / cover no-repeat;
+  width: 100%;
+  max-height: 330px;
+}
+
+@include desktop {
+  .card-image {
+    max-height: 290px;
+    height: 25%;
+    width: 100%;
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+  width: 100%;
+  align-items: left;
+  margin-bottom: auto;
+  justify-content: space-evenly;
+
+  @include desktop {
+    align-items: center;
+    padding: 42px 16px;
+  }
+
+  .card-title {
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.67px;
+    text-align: center;
+    margin: 0;
+
+    @include desktop {
+      font-size: 30px;
+      line-height: 47px;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@import '../../../LayoutContainer/LayoutContainer.module.scss';
+
+
+.title-desktop {
+  display: none;
+  
+  @include desktop {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 35px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    text-align: left;
+    display: block;
+    margin-bottom: 16px;
+    font-size: 30px;
+  }
+}
+
+.title-mobile {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #000;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 35px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-align: left;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: left;
+  gap: 32px;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .title {
+    color: #000;
+    font-family: Helvetica Neue;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 35px;
+    letter-spacing: 2.14px;
+    text-transform: uppercase;
+  }
+
+  .about-container-description {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+
+    @include desktop {
+      flex-direction: column;
+    }
+
+    .description-container {
+      .description {
+        color: #000;
+        font-family: Helvetica Neue;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 28px;
+        letter-spacing: 2.14px;
+
+
+        @include desktop {
+          color: #000;
+          font-family: Helvetica Neue;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 200;
+          line-height: 30px;
+          letter-spacing: 2.14px;
+          align-self: flex-start;
+          max-width: 570px;
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include desktop {
+        flex-direction: row;
+      }
+
+      .icon {
+        display: flex;
+        gap: 18px;
+        align-self: stretch;
+        color: #000;
+        text-align: center;
+        font-family: Helvetica Neue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 1.29px;
+        border-radius: 10px;
+        border: 0.5px solid #000;
+        padding: 7px 12px;
+        width: fit-content;
+
+        p {
+          width: 125px;
+        }
+      }
+    }
+
+  }
+
+  .image {
+    width: 102px;
+
+    @include desktop {
+      width: 172px;
+    }
+  }
+}

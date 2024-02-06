@@ -1,0 +1,15 @@
+@import '../../assets/styling/mixins.scss';
+
+.wrapper {
+    padding: 0 20px;
+
+    @include desktop {
+        padding:0;
+    }
+
+    .container {
+        max-width: 1186px;
+        margin: 0 auto;
+    }
+}
+
