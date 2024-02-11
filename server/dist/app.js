@@ -16,38 +16,36 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const chef_route_1 = __importDefault(require("./routes/chef.route"));
-const restaurant_route_1 = __importDefault(require("./routes/restaurant.route"));
-const dish_route_1 = __importDefault(require("./routes/dish.route"));
+const cors_1 = __importDefault(require("cors"));
+const swagger_1 = require("./utils/swagger");
+const api_route_1 = __importDefault(require("./routes/api/api.route"));
 const app = (0, express_1.default)();
 dotenv_1.default.config();
 app.use(body_parser_1.default.json());
+(0, swagger_1.swaggerSetup)(app);
+app.use((0, cors_1.default)());
 const uri = `${process.env.MONGODB_URI}`;
-console.log('MongoDB URI:', uri);
 function connect() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            console.log('trying to connect');
+            console.log('trying to connect to DB');
             yield mongoose_1.default.connect(uri);
             console.log('Connected to MongoDB');
         }
         catch (error) {
+            console.log('Error occured while trying to connect to MongoDB');
             console.error(error);
         }
     });
 }
-// Routes
-app.use('/api', chef_route_1.default);
-app.use('/api', restaurant_route_1.default);
-app.use('/api', dish_route_1.default);
-// Start server
+app.use('/api', api_route_1.default);
 function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield connect();
             const PORT = process.env.PORT || 3001;
             app.listen(PORT, () => {
-                console.log(`SSServer is running on port ${PORT}`);
+                console.log(`Server is running on port ${PORT}`);
             });
         }
         catch (error) {
