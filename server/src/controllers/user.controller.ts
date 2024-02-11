@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import userHandler from "../handlers/user.handler";
 import * as jwt from 'jsonwebtoken';
 
-const secretKey: string = `${process.env.SECRET_KEY}`; 
+const secretKey: string = `${process.env.SECRET_KEY}`;
 
 const userControllers = {
 
