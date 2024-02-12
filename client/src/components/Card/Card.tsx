@@ -19,9 +19,9 @@ const Card: React.FC<CardProps> = ({ children, title, imageUrl, minHeight, minWi
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const adjustedMinHeight = minHeight && windowWidth < 800 ? minHeight / 1.4 : minHeight;
-  const adjustedMinWidth = minWidth && windowWidth < 800 ? minWidth / 1.6 : minWidth;
-  const adjustedImgSize = imgSize && windowWidth < 800 ? imgSize : imgSize;
+  const adjustedMinHeight = minHeight && windowWidth < 768 ? minHeight / 1.4 : minHeight;
+  const adjustedMinWidth = minWidth && windowWidth < 768 ? minWidth / 1.6 : minWidth;
+  const adjustedImgSize = imgSize && windowWidth < 768 ? imgSize : imgSize;
 
   const cardStyle: React.CSSProperties = {
     ...(adjustedMinHeight && { height: `${adjustedMinHeight}px` }),
@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ children, title, imageUrl, minHeight, minWi
   };
 
   const imgStyle: React.CSSProperties = {
-    ...(adjustedImgSize && windowWidth < 800 && { width: `${adjustedImgSize}px` }),
+    ...(adjustedImgSize && windowWidth > 768 && { height: `${adjustedImgSize}px` }),
   };
 
   return (

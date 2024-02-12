@@ -25,3 +25,9 @@
         image: string;
         description: string;
       }
+
+      export interface ISearchResults {
+        restaurants: IRestaurant[];
+        chefs: IChef[];
+        dishes: IDish[];
+      }

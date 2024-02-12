@@ -45,6 +45,6 @@ const searchRouter: Router = express.Router();
  *                   items:
  *                     $ref: '#/components/schemas/Dish'
  */
-searchRouter.get('/', verifyToken, SearchController.search);
+searchRouter.get('/', SearchController.search);
 
 export default searchRouter;

@@ -52,7 +52,7 @@ function ChefOfTheWeek() {
        <div className={styles['card-section']}>
          <CardSection
           cards={chefOfTheWeekRestaurants.map((restaurant) => (
-            <Card key={restaurant.id} title={restaurant.name} imageUrl={restaurant.image} minHeight={100} >
+            <Card key={restaurant.id} title={restaurant.name} imageUrl={restaurant.image} minHeight={100} imgSize={150} >
               <p>{''}</p>
             </Card>
           ))}
