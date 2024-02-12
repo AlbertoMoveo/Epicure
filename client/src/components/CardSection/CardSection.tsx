@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { Link } from 'react-router-dom'; 
 import styles from './CardSection.module.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -68,9 +69,11 @@ const CardSection: React.FC<CardSectionProps> = ({ cards, backgroundColor, yPadd
       </Swiper>
       {moreButtonTitle && (
         <div className={styles['more-button']}>
-          {moreButtonTitle}
+          <Link to="/Restaurants">
+            {moreButtonTitle}
           <img src={moreButton} alt="More Restaurants" />
-        </div>
+          </Link>
+      </div>
       )}
     </div>
   );
