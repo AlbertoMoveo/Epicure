@@ -59,7 +59,8 @@ const Homepage = () => {
             chef={res.chefName}
             ratingUrl={getRatingUrl(res.rating)}
             imageUrl={res.image}
-            minHeight={200}
+            minHeight={169}
+            minWidth={350}
           />
         ))}
         showMoreButton={true}
@@ -76,7 +77,8 @@ const Homepage = () => {
             imageUrl={dish.image}
             icon={dish.tags[0] === 'Spicy' ? <img src={spicyIcon} alt="Spicy Icon" /> : <img src={veganIcon} alt="Vegan Icon" />}
             price={dish.price}
-            minHeight={355}
+            minHeight={400}
+            minWidth={350}
           />
         ))}
       />
