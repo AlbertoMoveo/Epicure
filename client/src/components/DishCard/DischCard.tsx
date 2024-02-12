@@ -9,11 +9,12 @@ interface DishCardProps {
   icon: React.ReactNode;
   price: string;
   minHeight?: number;
+  minWidth?: number;
 }
 
-const DishCard: React.FC<DishCardProps> = ({ title, description, imageUrl, icon, price, minHeight }) => {
+const DishCard: React.FC<DishCardProps> = ({ title, description, imageUrl, icon, price, minHeight, minWidth }) => {
   return (
-    <Card title={title} imageUrl={imageUrl} minHeight={minHeight}>
+    <Card title={title} imageUrl={imageUrl} minHeight={minHeight} minWidth={minWidth}>
       {icon}
         <p className={styles['dish-description']}>{description}</p>
         <div className={styles['dish-price-container']}>

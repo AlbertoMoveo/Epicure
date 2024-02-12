@@ -35,6 +35,15 @@ const CardSection: React.FC<CardSectionProps> = ({ cards, backgroundColor, yPadd
         breakpoints={{
           // Desktop
           768: {
+            spaceBetween: 24,
+            slidesPerView: 2.3,
+            initialSlide: 0,
+            autoHeight: true,
+            allowSlidePrev: true,
+            allowSlideNext: true,
+          },
+          1068: {
+            spaceBetween: 24,
             slidesPerView: 3,
             initialSlide: 0,
             autoHeight: true,
